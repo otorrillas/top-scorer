@@ -7,7 +7,9 @@ const GameItem = ({ id, name, logo }) => (
   <>
     <p>
       <img src={logo} alt={`${name} logo`} />
-      <Link href={`/games/${id}`}>{name}</Link>
+      <Link href={{ pathname: '/game', query: { id } }}>
+        <a>{name}</a>
+      </Link>
     </p>
   </>
 );

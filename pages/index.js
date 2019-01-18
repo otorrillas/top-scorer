@@ -9,8 +9,8 @@ import styles from './index.css';
 
 export default class GameList extends React.Component {
   static async getInitialProps() {
-    var res = await fetch(endpoints.gameList);
-    var json = await res.json();
+    const res = await fetch(endpoints.gameList);
+    const json = await res.json();
 
     return { games: json.data };
   }

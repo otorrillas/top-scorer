@@ -7,7 +7,7 @@ exports[`<GameItem /> @render default 1`] = `
     src="https://sample.com/img.jpg"
   />
   <a
-    href="/games/1234"
+    href="/game?id=1234"
     onClick={[Function]}
   >
     test game
