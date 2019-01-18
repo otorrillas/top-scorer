@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GameDetails /> @render default 1`] = `
+Array [
+  <p>
+    <b>
+      Time:
+    </b>
+     
+    20
+     minutes and 
+    34
+     seconds
+  </p>,
+  <p>
+    <b>
+      Player:
+    </b>
+     
+    SomePlayer
+  </p>,
+  <button>
+    <a
+      href="https://someVideoUrl"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Watch run video
+    </a>
+  </button>,
+]
+`;
