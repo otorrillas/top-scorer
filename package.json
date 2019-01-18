@@ -5,14 +5,32 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Oriol Torrillas",
+  "license": "MIT",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-regenerator": "^7.0.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "nock": "^10.0.6",
+    "react-test-renderer": "^16.7.0"
   }
 }
