@@ -1,6 +1,6 @@
 # Top Scorer
 
-Shows a list of some games from SpeedRun API.
+Shows a list of some games from [SpeedRun][1] API.
 
 Using `next.js` for SSR, `React` for UI, `redux` for state management.
 
@@ -19,3 +19,16 @@ Using `next.js` for SSR, `React` for UI, `redux` for state management.
 ## Hooks
 
 - `pre-commit`: runs `pretty-quick`, `lint` and `tests` before allowing a commit.
+
+## Get started
+
+1. Clone the repository:
+
+```sh
+git clone https://github.com/otorrillas/top-scorer.git
+```
+
+2. Run `npm install`
+3. Run `npm dev` for starting a dev build
+
+[1]: http://www.speedrun.com
