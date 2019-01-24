@@ -1,34 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import _find from 'lodash/head';
 import _head from 'lodash/head';
 
-import { connect } from 'react-redux';
+import { getGames } from 'Store/selectors';
+import { GameShape } from 'Utils/propTypes';
 
-import { getGames } from '../store/selectors';
+import TotalTime from '../atoms/TotalTime';
 
-const TotalTime = ({ time }) => {
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
-
-  return (
-    <>
-      {minutes} minutes and {seconds} seconds
-    </>
-  );
-};
-
-const GameDetails = ({ games, id, error }) => {
-  if (error) {
-    return (
-      <>
-        <h1>Error</h1>
-        <p>{error}</p>
-      </>
-    );
-  }
-
+export const GameDetailsView = ({ games, id }) => {
   const game = games[id];
   const { abbreviation: name, assets, runs } = game;
 
@@ -63,10 +45,9 @@ const GameDetails = ({ games, id, error }) => {
   );
 };
 
-GameDetails.propTypes = {
-  // time: PropTypes.number.isRequired,
-  // video: PropTypes.string.isRequired,
-  // player: PropTypes.string.isRequired
+GameDetailsView.propTypes = {
+  games: PropTypes.objectOf(GameShape).isRequired,
+  id: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -76,4 +57,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   null
-)(GameDetails);
+)(GameDetailsView);

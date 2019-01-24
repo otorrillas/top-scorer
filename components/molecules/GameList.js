@@ -1,16 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import _map from 'lodash/map';
 
-import { getGames } from '../store/selectors';
+import { getGames } from 'Store/selectors';
 
-import GameItem from './GameItem';
+import { GameShape } from 'Utils/propTypes';
+
+import GameItem from '../atoms/GameItem';
 
 import styles from './GameList.css';
 
-const GameList = ({ games }) => {
-  console.log(games);
+export const GameListView = ({ games }) => {
   return (
     <ul className={styles.gameList}>
       {_map(games, ({ id, abbreviation: name, assets }) => (
@@ -22,13 +24,15 @@ const GameList = ({ games }) => {
   );
 };
 
+GameListView.propTypes = {
+  games: PropTypes.objectOf(GameShape)
+};
+
 const mapStateToProps = state => ({
   games: getGames(state)
 });
 
-const mapDispatchToProps = dispatch => ({});
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
-)(GameList);
+  null
+)(GameListView);

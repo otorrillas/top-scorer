@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> @render default 1`] = `
+Array [
+  <h1>
+    Error
+  </h1>,
+  <p>
+    An unexpected error
+  </p>,
+]
+`;

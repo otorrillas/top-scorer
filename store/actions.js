@@ -2,7 +2,7 @@ import 'isomorphic-unfetch';
 
 import _find from 'lodash/find';
 
-import endpoints from '../services/endpoints.json';
+import endpoints from 'Services/endpoints.json';
 
 export const actionTypes = {
   RESET: 'RESET',
@@ -43,7 +43,7 @@ export function fetchRuns(id) {
   return async function(dispatch, getState) {
     const games = getState().games;
 
-    const targetGame = _find(games, { id });
+    const targetGame = games[id];
     const runsUrl = _find(targetGame.links, { rel: 'runs' }).uri;
 
     await fetch(runsUrl)

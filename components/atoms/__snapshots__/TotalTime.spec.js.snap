@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TotalTime /> @render default 1`] = `
+Array [
+  "7",
+  " minutes and ",
+  "30",
+  " seconds",
+]
+`;

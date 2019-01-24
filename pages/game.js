@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 import _has from 'lodash/has';
 
-import { fetchGamesList, fetchRuns } from '../store/actions';
+import { fetchGamesList, fetchRuns } from 'Store/actions';
 
-import GameDetails from '../components/GameDetails';
+import GameDetails from 'Components/molecules/GameDetails';
+import Error from 'Components/atoms/Error';
 
 class Game extends React.Component {
   static async getInitialProps(props) {
@@ -42,7 +43,7 @@ class Game extends React.Component {
 
   render() {
     const { id, err } = this.props;
-    return <GameDetails id={id} error={err} />;
+    return err ? <Error message={err} /> : <GameDetails id={id} />;
   }
 }
 

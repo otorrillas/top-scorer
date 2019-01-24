@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchGamesList } from '../store/actions';
+import { fetchGamesList } from 'Store/actions';
 
-import GameList from '../components/GameList';
+import GameList from 'Components/molecules/GameList';
 
 class Index extends React.Component {
   static async getInitialProps(props) {
