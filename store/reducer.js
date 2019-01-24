@@ -3,7 +3,7 @@ import _keyBy from 'lodash/keyBy';
 import { actionTypes } from './actions';
 
 export const initialState = {
-  error: false,
+  error: null,
   games: [],
   selectedGame: null
 };

@@ -6,7 +6,7 @@ import endpoints from 'Services/endpoints.json';
 
 export const actionTypes = {
   RESET: 'RESET',
-  RESET: 'FAILURE',
+  FAILURE: 'FAILURE',
   FETCH_GAMES_LIST: 'FETCH_GAMES_LIST',
   FETCH_GAMES_LIST_SUCCESS: 'FETCH_GAMES_LIST_SUCCESS',
   FETCH_RUNS: 'FETCH_RUNS',
@@ -17,8 +17,8 @@ export function reset() {
   return { type: actionTypes.RESET };
 }
 
-export function failure() {
-  return { type: actionTypes.FAILURE };
+export function failure(error) {
+  return { type: actionTypes.FAILURE, error };
 }
 
 export function fetchGamesList() {
@@ -28,7 +28,7 @@ export function fetchGamesList() {
       .then(json => {
         dispatch(fetchGamesListSuccess(json.data));
       })
-      .catch(error => console.log(error));
+      .catch(err => dispatch(failure(err)));
   };
 }
 

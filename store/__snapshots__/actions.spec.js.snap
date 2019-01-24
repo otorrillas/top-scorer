@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux - actions FETCH_GAMES_LIST should dispatch a failure action on error 1`] = `Array []`;
+
+exports[`Redux - actions FETCH_GAMES_LIST should dispatch a fetchGamesListSuccess on success 1`] = `Array []`;
+
+exports[`Redux - actions export action types 1`] = `
+Object {
+  "FAILURE": "FAILURE",
+  "FETCH_GAMES_LIST": "FETCH_GAMES_LIST",
+  "FETCH_GAMES_LIST_SUCCESS": "FETCH_GAMES_LIST_SUCCESS",
+  "FETCH_RUNS": "FETCH_RUNS",
+  "FETCH_RUNS_SUCCESS": "FETCH_RUNS_SUCCESS",
+  "RESET": "RESET",
+}
+`;
+
+exports[`Redux - actions should create a FAILURE action 1`] = `
+Object {
+  "error": "test error",
+  "type": "FAILURE",
+}
+`;
+
+exports[`Redux - actions should create a FETCH_GAMES_LIST_SUCCESS action 1`] = `
+Object {
+  "data": Object {
+    "1234": Object {
+      "abbreviation": "test",
+      "assets": Object {
+        "cover-medium": Object {
+          "uri": "https://cover-medium-url",
+        },
+      },
+      "runs": Array [
+        Object {
+          "players": Array [
+            Object {
+              "id": "playerId",
+            },
+          ],
+          "times": Object {
+            "primary_t": 450,
+          },
+          "videos": Object {
+            "links": Array [
+              Object {
+                "uri": "https://video-url",
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+  "type": "FETCH_GAMES_LIST_SUCCESS",
+}
+`;
+
+exports[`Redux - actions should create a FETCH_RUN_SUCCESS action 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "players": Array [
+        Object {
+          "id": "playerId",
+        },
+      ],
+      "times": Object {
+        "primary_t": 450,
+      },
+      "videos": Object {
+        "links": Array [
+          Object {
+            "uri": "https://video-url",
+          },
+        ],
+      },
+    },
+  ],
+  "id": 1234,
+  "type": "FETCH_RUNS_SUCCESS",
+}
+`;
+
+exports[`Redux - actions should create a RESET action 1`] = `
+Object {
+  "type": "RESET",
+}
+`;
