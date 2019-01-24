@@ -9,5 +9,20 @@
       }
     ],
     "@babel/react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "Components": "./components",
+          "Store": "./store",
+          "Pages": "./pages",
+          "Services": "./services",
+          "Utils": "./utils"
+        }
+      }
+    ]
   ]
 }

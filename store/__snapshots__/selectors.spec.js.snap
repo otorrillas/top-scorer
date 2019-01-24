@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux - selectors getGames returns mockGames 1`] = `
+Object {
+  "1234": Object {
+    "abbreviation": "test",
+    "assets": Object {
+      "cover-medium": Object {
+        "uri": "https://cover-medium-url",
+      },
+    },
+    "runs": Array [
+      Object {
+        "players": Array [
+          Object {
+            "id": "playerId",
+          },
+        ],
+        "times": Object {
+          "primary_t": 450,
+        },
+        "videos": Object {
+          "links": Array [
+            Object {
+              "uri": "https://video-url",
+            },
+          ],
+        },
+      },
+    ],
+  },
+}
+`;
+
+exports[`Redux - selectors getGames returns undefined on empty state 1`] = `undefined`;

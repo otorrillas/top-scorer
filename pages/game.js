@@ -1,31 +1,50 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import GameDetails from '../components/GameDetails';
+import _has from 'lodash/has';
 
-export default class extends React.Component {
-  static async getInitialProps({ query: { id } }) {
-    const runUrl = `https://www.speedrun.com/api/v1/runs?game=${id}`;
+import { fetchGamesList, fetchRuns } from 'Store/actions';
 
-    const res = await fetch(runUrl);
-    const json = await res.json();
+import GameDetails from 'Components/molecules/GameDetails';
+import Error from 'Components/atoms/Error';
 
-    return { topRun: json.data[0] };
+class Game extends React.Component {
+  static async getInitialProps(props) {
+    const {
+      store,
+      query: { id }
+    } = props.ctx;
+
+    let games = store.getState().games;
+    if (games.length === 0) {
+      // We need to fetch the games list first
+      // that contains information such as game assets
+      // and the runs url
+      await store.dispatch(fetchGamesList());
+      games = store.getState().games;
+    }
+
+    if (_has(games, id)) {
+      const game = games[id];
+
+      if (!game.runs) {
+        await store.dispatch(fetchRuns(id));
+      }
+
+      return {
+        id
+      };
+    }
+
+    return {
+      err: 'Not found'
+    };
   }
 
   render() {
-    const {
-      topRun: {
-        videos,
-        players,
-        times: { primary_t }
-      }
-    } = this.props;
-    return (
-      <GameDetails
-        time={primary_t}
-        video={videos.links[0].uri}
-        player={players[0].id}
-      />
-    );
+    const { id, err } = this.props;
+    return err ? <Error message={err} /> : <GameDetails id={id} />;
   }
 }
+
+export default connect()(Game);

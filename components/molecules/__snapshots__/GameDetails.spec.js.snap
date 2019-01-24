@@ -2,14 +2,21 @@
 
 exports[`<GameDetails /> @render default 1`] = `
 Array [
+  <h1>
+    test
+  </h1>,
+  <img
+    alt="test logo"
+    src="https://cover-medium-url"
+  />,
   <p>
     <b>
       Time:
     </b>
      
-    20
+    7
      minutes and 
-    34
+    30
      seconds
   </p>,
   <p>
@@ -17,11 +24,11 @@ Array [
       Player:
     </b>
      
-    SomePlayer
+    playerId
   </p>,
   <button>
     <a
-      href="https://someVideoUrl"
+      href="https://video-url"
       rel="noopener noreferrer"
       target="_blank"
     >

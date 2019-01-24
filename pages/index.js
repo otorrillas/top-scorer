@@ -1,34 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import 'isomorphic-unfetch';
+import { fetchGamesList } from 'Store/actions';
 
-import GameItem from '../components/GameItem';
-import endpoints from '../services/endpoints.json';
+import GameList from 'Components/molecules/GameList';
 
-import styles from './index.css';
+class Index extends React.Component {
+  static async getInitialProps(props) {
+    const { store } = props.ctx;
 
-export default class GameList extends React.Component {
-  static async getInitialProps() {
-    const res = await fetch(endpoints.gameList);
-    const json = await res.json();
+    if (store.getState().games.length === 0) {
+      await store.dispatch(fetchGamesList());
+    }
 
-    return { games: json.data };
+    return {};
   }
 
   render() {
-    const { games } = this.props;
-
-    return (
-      <ul className={styles.gameList}>
-        {games.map(game => {
-          const { id, abbreviation: name, assets } = game;
-          return (
-            <li key={id} className={styles.gameListItem}>
-              <GameItem id={id} name={name} logo={assets['cover-medium'].uri} />
-            </li>
-          );
-        })}
-      </ul>
-    );
+    return <GameList />;
   }
 }
+
+export default connect()(Index);
