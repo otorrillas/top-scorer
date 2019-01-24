@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import _find from 'lodash/head';
 import _head from 'lodash/head';
 
 import { getGames } from 'Store/selectors';

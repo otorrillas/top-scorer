@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import _has from 'lodash/has';
 
+import { ContextShape } from 'Utils/propTypes';
 import { fetchGamesList, fetchRuns } from 'Store/actions';
 
 import GameDetails from 'Components/molecules/GameDetails';
@@ -46,5 +48,11 @@ class Game extends React.Component {
     return err ? <Error message={err} /> : <GameDetails id={id} />;
   }
 }
+
+Game.propTypes = {
+  id: PropTypes.string.isRequired,
+  err: PropTypes.string.isRequired,
+  ctx: ContextShape
+};
 
 export default connect()(Game);

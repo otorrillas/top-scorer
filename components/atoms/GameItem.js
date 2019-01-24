@@ -15,6 +15,7 @@ const GameItem = ({ id, name, logo }) => (
 );
 
 GameItem.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired
 };

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { getGames } from './selectors';
 import { mockGames } from 'Utils/mocks';
 

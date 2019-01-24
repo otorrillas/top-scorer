@@ -25,3 +25,8 @@ export const GameShape = PropTypes.shape({
   assets: PropTypes.objectOf(AssetShape),
   runs: PropTypes.arrayOf(RunShape)
 });
+
+export const ContextShape = PropTypes.shape({
+  store: PropTypes.object,
+  query: PropTypes.object
+});
