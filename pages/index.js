@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchGamesList } from 'Store/actions';
+import { ContextShape } from 'Utils/propTypes';
 
 import GameList from 'Components/molecules/GameList';
 
@@ -20,5 +21,9 @@ class Index extends React.Component {
     return <GameList />;
   }
 }
+
+Index.propTypes = {
+  ctx: ContextShape
+};
 
 export default connect()(Index);

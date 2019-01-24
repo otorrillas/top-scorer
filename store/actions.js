@@ -51,7 +51,7 @@ export function fetchRuns(id) {
       .then(json => {
         dispatch(fetchRunsSuccess(id, json.data));
       })
-      .catch(error => console.log(error));
+      .catch(err => dispatch(failure(err)));
   };
 }
 
