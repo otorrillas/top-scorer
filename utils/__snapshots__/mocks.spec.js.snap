@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Utils - mocks games 1`] = `
+Object {
+  "1234": Object {
+    "abbreviation": "test",
+    "assets": Object {
+      "cover-medium": Object {
+        "uri": "https://cover-medium-url",
+      },
+    },
+    "runs": Array [
+      Object {
+        "players": Array [
+          Object {
+            "id": "playerId",
+          },
+        ],
+        "times": Object {
+          "primary_t": 450,
+        },
+        "videos": Object {
+          "links": Array [
+            Object {
+              "uri": "https://video-url",
+            },
+          ],
+        },
+      },
+    ],
+  },
+}
+`;
